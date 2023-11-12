@@ -124,8 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicsObject: {fileID: -3694514020652528631}
-  maxForce: 10
-  pointToRadius: {x: 0, y: 0}
+  maxForce: 150
   slowDownMultiplyer: 0
 --- !u!114 &-2159422795502870909
 MonoBehaviour:

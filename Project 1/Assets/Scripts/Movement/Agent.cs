@@ -14,7 +14,9 @@ public abstract class Agent : MonoBehaviour
     [SerializeField]
     float maxForce = 10;
 
-    public Vector2 pointToRadius;
+    protected Vector2 pointToRadius;
+
+    protected Vector3 totalForce;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +27,17 @@ public abstract class Agent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //reset total force
+        totalForce = Vector3.zero;
+
         //any forces applied will be done in each of agent's childs
         CalcSteeringForces();
+
+        //force can not ecceed max force
+        totalForce = Vector3.ClampMagnitude(totalForce, maxForce);
+
+        //apply the force to the physics object
+        physicsObject.ApplyForce(totalForce);
     }
 
     protected abstract void CalcSteeringForces();

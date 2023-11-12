@@ -6,9 +6,6 @@ public class Seeker : Agent
 {
     private GameObject target;
 
-    [SerializeField]
-    int slowDownMultiplyer;
-
     //spawn manager gives seeker its target when it spawns
     public GameObject Target
     {
@@ -22,12 +19,12 @@ public class Seeker : Agent
         if (target != null)
         {
             //applies the steering force to the physics object
-            physicsObject.ApplyForce(Seek(target));
+            totalForce += Seek(target);
         }
         //moves randomly when player dies
         else
         {
-            physicsObject.ApplyForce(Wander(5, 10));
+            totalForce += Wander(5, 10);
         }
     }
         
