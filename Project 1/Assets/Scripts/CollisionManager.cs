@@ -53,14 +53,14 @@ public class CollisionManager : MonoBehaviour
         //loops through every enemy
         foreach (var enemy in enemies)
         {
-            //loops through every bullet
+            //loops through every player bullet
             foreach (var playerBullet in playerBullets)
             {
                 //if a player bullet collides with an enemy
                 if (CircleCheck(enemy.Center, enemy.Radius, playerBullet.Center, playerBullet.Radius))
                 {
                     //notifies spriteInfo that these objects are colliding
-                    playerBullet.CollidingWithEnemy = true;
+                    playerBullet.CollidingWithEnemy();
                     enemy.CollidingWithBullet(playerBullet.Damage);
 
                     playerBullets.Remove(playerBullet);

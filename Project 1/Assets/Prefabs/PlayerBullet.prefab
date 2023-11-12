@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7660392080924494625}
   - component: {fileID: 1890145046305201178}
   - component: {fileID: 1595625450362877074}
-  - component: {fileID: 1649656270568396275}
+  - component: {fileID: 3535705484456921192}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1890145046305201178
 SpriteRenderer:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   deathTimer: 5
---- !u!114 &1649656270568396275
+--- !u!114 &3535705484456921192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,9 +109,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4211198050955360585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b47462560bee44a8c55040eff97080, type: 3}
+  m_Script: {fileID: 11500000, guid: 3157ee9c3325325459acbce152031258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  radius: 3.36
+  radius: 2
   renderer: {fileID: 1890145046305201178}

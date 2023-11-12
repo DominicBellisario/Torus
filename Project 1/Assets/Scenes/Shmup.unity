@@ -1287,83 +1287,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5a6c654dc2c854498ae331d6b73bef1, type: 3}
---- !u!1001 &1085600943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2227522978161972838, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2227522978161972838, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2227522978161972838, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2227522978161972838, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.213
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.45451948
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5416752
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.5416752
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.45451948
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146901533744653217, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7104214181938241415, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
-      propertyPath: m_Name
-      value: EnemyDamagedParticles
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
 --- !u!1001 &1147954540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2221,7 +2144,6 @@ MonoBehaviour:
   seekerEnemyPrefab: {fileID: 3428607983588626067, guid: 0d0f575bdbaf3854eae13d21af25860e, type: 3}
   enemyBulletPrefab: {fileID: 1890145046305201178, guid: 50ec859c4903b694f84f512795f6e9bd, type: 3}
   waveTime: 8
-  bulletPrefab: {fileID: 1890145046305201178, guid: 901ffdce93f53dc4493cbcce6fbb9091, type: 3}
   minSmallAsteroids: 1
   maxSmallAsteroids: 3
   minMediumAsteroids: 0
@@ -2232,6 +2154,8 @@ MonoBehaviour:
   maxShootEnemies: 2
   minSeekerEnemies: 0
   maxSeekerEnemies: 3
+  defaultBulletPrefab: {fileID: 1890145046305201178, guid: 901ffdce93f53dc4493cbcce6fbb9091, type: 3}
+  defaultBulletDeathP: {fileID: 4994613103310427475, guid: e8a511099f2eb3e45b9948bfb213d5e9, type: 3}
   player: {fileID: 1492528857}
 --- !u!4 &1739656179
 Transform:

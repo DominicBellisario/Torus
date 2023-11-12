@@ -2,35 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBulletInfo : MonoBehaviour
+public abstract class PlayerBulletInfo : MonoBehaviour
 {
     //the damage the bullet does when it collides
     [SerializeField]
-    int damage;
+    protected int damage;
 
     //for circle collsions
     [SerializeField]
-    float radius;
-
-    //wether or not the bullet is hitting an enemy
-    private bool collidingWithEnemy = false;
+    protected float radius;
 
     //used to calculate center of circle
     [SerializeField]
-    new SpriteRenderer renderer;
+    protected new SpriteRenderer renderer;
 
     //center of the circle
-    private Vector2 center = new Vector2();
+    protected Vector2 center = new Vector2();
+
+    //particle effect the bullet has when it is destroyed
+    protected ParticleSystem deathParticles;
 
     //--------things---------
     public Vector2 Center
     {
         get { return center; }
-    }
-
-    public bool CollidingWithEnemy
-    {
-        set { collidingWithEnemy = value; }
     }
 
     public float Radius
@@ -43,22 +38,29 @@ public class PlayerBulletInfo : MonoBehaviour
         get { return damage; }
     }
 
+    //spawn manager gives the value
+    public ParticleSystem DeathParticles
+    {
+        get { return deathParticles; }
+        set { deathParticles = value; }
+    }
+
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         //updates values for circle
         center.x = renderer.bounds.center.x;
         center.y = renderer.bounds.center.y;
-
-        //bullet is destroyed when it hits an enemy
-        if (collidingWithEnemy)
-        {
-            collidingWithEnemy = false;
-            Destroy(gameObject);
-        }
     }
 
-    private void OnDrawGizmos()
+    //what happens to the bullet when it collides with an enemy
+    public void CollidingWithEnemy()
+    {
+
+        Destroy(gameObject);
+    }
+
+    protected void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
 

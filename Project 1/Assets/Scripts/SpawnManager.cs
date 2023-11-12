@@ -64,8 +64,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     private double currentTime;
     
-    [SerializeField]
-    SpriteRenderer bulletPrefab;
+    
 
     //min and max for each wave
     [SerializeField]
@@ -91,6 +90,15 @@ public class SpawnManager : Singleton<SpawnManager>
 
     //toggles between left and right gun firing
     private bool leftGun;
+    
+    //------------------player values--------------------
+    //default bullet
+    [SerializeField]
+    SpriteRenderer defaultBulletPrefab;
+
+    //default bullet death particle
+    [SerializeField]
+    ParticleSystem defaultBulletDeathP;
 
     //gets player rotation
     [SerializeField]
@@ -142,7 +150,7 @@ public class SpawnManager : Singleton<SpawnManager>
                 shootTimer = 0;
 
                 //fire a bullet
-                SpawnPlayerBullet();
+                SpawnDefaultBullet();
             }
         }
         // keep timer ticking so cooldown can happen when not pressing left click
@@ -349,31 +357,32 @@ public class SpawnManager : Singleton<SpawnManager>
         return spawnPosition;
     }
 
-    //spawn a player bullet
-    private void SpawnPlayerBullet()
+    //spawn a default player bullet
+    private void SpawnDefaultBullet()
     {
+        SpriteRenderer bullet;
         if (leftGun)
         {
-            //creates a new bullet
-            SpriteRenderer bullet = Instantiate(bulletPrefab, movementController.LeftGun, player.transform.rotation);
-
-            //bullet is collidable
-            collisionManager.PlayerBullets.Add(bullet.GetComponent<PlayerBulletInfo>());
+            //creates a new bullet at the left gun
+            bullet = Instantiate(defaultBulletPrefab, movementController.LeftGun, player.transform.rotation);
 
             //next shot will be from the right gun
             leftGun = false;
         }
         else
         {
-            //creates a new bullet
-            SpriteRenderer bullet = Instantiate(bulletPrefab, movementController.RightGun, player.transform.rotation);
-
-            //bullet is collidable
-            collisionManager.PlayerBullets.Add(bullet.GetComponent<PlayerBulletInfo>());
+            //creates a new bullet at the right gun
+            bullet = Instantiate(defaultBulletPrefab, movementController.RightGun, player.transform.rotation);
 
             //next shot will be from the left gun
             leftGun = true;
         }
+
+        //give bullet values/assets
+        bullet.GetComponent<DefaultBulletInfo>().DeathParticles = defaultBulletDeathP;
+
+        //bullet is collidable
+        collisionManager.PlayerBullets.Add(bullet.GetComponent<DefaultBulletInfo>());
     }
 
     //spawns child asteroids from a point on the scene
