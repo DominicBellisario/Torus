@@ -115,3 +115,4 @@ MonoBehaviour:
   damage: 1
   radius: 2
   renderer: {fileID: 1890145046305201178}
+  deathParticles: {fileID: 4994613103310427475, guid: e8a511099f2eb3e45b9948bfb213d5e9, type: 3}

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PlayerBulletInfo : MonoBehaviour
-{
+{   
+    //used to spawn particles
+    protected SpawnManager spawnManager;
+    
     //the damage the bullet does when it collides
     [SerializeField]
     protected int damage;
@@ -20,6 +23,7 @@ public abstract class PlayerBulletInfo : MonoBehaviour
     protected Vector2 center = new Vector2();
 
     //particle effect the bullet has when it is destroyed
+    [SerializeField]
     protected ParticleSystem deathParticles;
 
     //--------things---------
@@ -38,11 +42,11 @@ public abstract class PlayerBulletInfo : MonoBehaviour
         get { return damage; }
     }
 
-    //spawn manager gives the value
-    public ParticleSystem DeathParticles
+    //given by spawn manager when it spawns
+    public SpawnManager SpawnManager
     {
-        get { return deathParticles; }
-        set { deathParticles = value; }
+        get { return spawnManager; }
+        set { spawnManager = value; }
     }
 
     // Update is called once per frame
@@ -56,7 +60,7 @@ public abstract class PlayerBulletInfo : MonoBehaviour
     //what happens to the bullet when it collides with an enemy
     public void CollidingWithEnemy()
     {
-        
+        spawnManager.SpawnParticleEffect(deathParticles, transform.position);
         Destroy(gameObject);
     }
 

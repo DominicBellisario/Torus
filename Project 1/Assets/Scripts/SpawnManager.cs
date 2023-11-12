@@ -61,8 +61,6 @@ public class SpawnManager : Singleton<SpawnManager>
 
     private double currentTime;
     
-    
-
     //min and max for each wave
     [SerializeField]
     int minSmallAsteroids;
@@ -89,10 +87,6 @@ public class SpawnManager : Singleton<SpawnManager>
     //default bullet
     [SerializeField]
     SpriteRenderer defaultBulletPrefab;
-
-    //default bullet death particle
-    [SerializeField]
-    ParticleSystem defaultBulletDeathP;
 
     //gets player rotation
     [SerializeField]
@@ -198,7 +192,7 @@ public class SpawnManager : Singleton<SpawnManager>
     }
 
     //spawns a new seeker enemy and adds it to the list
-    public SpriteRenderer SpawnSeekerEnemy(bool normalAngle)
+    public SpriteRenderer SpawnSeekerEnemy()
     {
         //create a new shoot enemy
         SpriteRenderer newSeekerEnemy = Instantiate(seekerEnemyPrefab);
@@ -272,7 +266,7 @@ public class SpawnManager : Singleton<SpawnManager>
         for (int i = 0; i < seekerEnemyNum; i++)
         {
             //spawn a new enemy
-            SpriteRenderer newSeekerEnemy = SpawnSeekerEnemy(true);
+            SpriteRenderer newSeekerEnemy = SpawnSeekerEnemy();
 
             //set the enemy to its random spawn postition
             newSeekerEnemy.transform.position = DetermineSpawnPosition();
@@ -314,19 +308,6 @@ public class SpawnManager : Singleton<SpawnManager>
         return spawnPosition;
     }
 
-    //spawn a default player bullet
-    public void SpawnDefaultBullet(Vector3 origin, Quaternion rotation)
-    {
-        //creates a new bullet
-        SpriteRenderer bullet = Instantiate(defaultBulletPrefab, origin, rotation);
-
-        //give bullet values/assets
-        bullet.GetComponent<DefaultBulletInfo>().DeathParticles = defaultBulletDeathP;
-
-        //bullet is collidable
-        collisionManager.PlayerBullets.Add(bullet.GetComponent<DefaultBulletInfo>());
-    }
-
     //spawns child asteroids from a point on the scene
     public void SpawnChildAsteroids(int size, int amount, Vector3 location)
     {
@@ -349,6 +330,19 @@ public class SpawnManager : Singleton<SpawnManager>
         }
     }
 
+    //spawn a default player bullet
+    public void SpawnDefaultBullet(Vector3 origin, Quaternion rotation)
+    {
+        //creates a new bullet
+        SpriteRenderer bullet = Instantiate(defaultBulletPrefab, origin, rotation);
+
+        //gives the bullet a spawn manager reference
+        bullet.GetComponent<DefaultBulletInfo>().SpawnManager = this;
+
+        //bullet is collidable
+        collisionManager.PlayerBullets.Add(bullet.GetComponent<DefaultBulletInfo>());
+    }
+
     //spawn enemy bullets on the shoot enemy that fired them
     public void SpawnEnemyBullet(Vector3 origin, Quaternion rotation)
     {
@@ -361,8 +355,9 @@ public class SpawnManager : Singleton<SpawnManager>
         collisionManager.EnemyBullets.Add(bullet.GetComponent<EnemyBulletInfo>());
     }
 
+    //spawn a particle effect at a location
     public void SpawnParticleEffect(ParticleSystem particleSystem, Vector3 location)
     {
-
+        Instantiate(particleSystem, location, new Quaternion(0, 0, 0, 0));
     }
 }
