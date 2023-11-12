@@ -56,7 +56,7 @@ public abstract class PlayerBulletInfo : MonoBehaviour
     //what happens to the bullet when it collides with an enemy
     public void CollidingWithEnemy()
     {
-
+        
         Destroy(gameObject);
     }
 

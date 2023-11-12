@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerInfo : MonoBehaviour
     //for bullet spawning
     [SerializeField]
     SpawnManager spawnManager;
+    [SerializeField]
+    MovementController movementController;
 
     //for circle collsions
     [SerializeField]
@@ -44,6 +47,9 @@ public class PlayerInfo : MonoBehaviour
     private bool isShooting;
 
     private float shootTimer;
+
+    //toggles between left and right gun firing
+    private bool leftGun;
 
     //--------things---------
 
@@ -151,8 +157,19 @@ public class PlayerInfo : MonoBehaviour
             //reset shoot timer
             shootTimer = 0;
 
-            //fire a bullet
-            spawnManager.SpawnDefaultBullet();
+            if (leftGun)
+            {
+                //fire a bullet from the left gun
+                spawnManager.SpawnDefaultBullet(movementController.LeftGun, transform.rotation);
+                leftGun = false;
+            }
+            else
+            {
+                //fire a bullet from the right gun
+                spawnManager.SpawnDefaultBullet(movementController.RightGun, transform.rotation);
+                leftGun = true;
+            }
+            
         }
     }
 

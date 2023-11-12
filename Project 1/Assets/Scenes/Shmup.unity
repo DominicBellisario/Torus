@@ -2135,7 +2135,6 @@ MonoBehaviour:
   healthUpdate: {fileID: 324485837}
   scoreUpdate: {fileID: 324485836}
   collisionManager: {fileID: 907445069}
-  movementController: {fileID: 1799778240546875588}
   playerInfo: {fileID: 1799778240546875592}
   smallAsteroidPrefab: {fileID: 3428607983588626067, guid: 6731ba06866d9334ab1e6a97d0cd8d55, type: 3}
   mediumAsteroidPrefab: {fileID: 3428607983588626067, guid: 111b9764dff34a3458bdd89e0afed573, type: 3}
@@ -2621,6 +2620,10 @@ PrefabInstance:
       propertyPath: spawnManager
       value: 
       objectReference: {fileID: 1739656178}
+    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
+      propertyPath: movementController
+      value: 
+      objectReference: {fileID: 1799778240546875588}
     - target: {fileID: 5492098265133053935, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
       propertyPath: m_Name
       value: Player

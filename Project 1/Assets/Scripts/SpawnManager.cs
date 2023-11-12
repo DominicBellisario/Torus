@@ -25,9 +25,6 @@ public class SpawnManager : Singleton<SpawnManager>
     //need to update coll list
     [SerializeField]
     CollisionManager collisionManager;
-    
-    [SerializeField]
-    MovementController movementController;
 
     [SerializeField]
     PlayerInfo playerInfo;
@@ -87,9 +84,6 @@ public class SpawnManager : Singleton<SpawnManager>
     int minSeekerEnemies;
     [SerializeField]
     int maxSeekerEnemies;
-
-    //toggles between left and right gun firing
-    private bool leftGun;
     
     //------------------player values--------------------
     //default bullet
@@ -321,25 +315,10 @@ public class SpawnManager : Singleton<SpawnManager>
     }
 
     //spawn a default player bullet
-    public void SpawnDefaultBullet()
+    public void SpawnDefaultBullet(Vector3 origin, Quaternion rotation)
     {
-        SpriteRenderer bullet;
-        if (leftGun)
-        {
-            //creates a new bullet at the left gun
-            bullet = Instantiate(defaultBulletPrefab, movementController.LeftGun, player.transform.rotation);
-
-            //next shot will be from the right gun
-            leftGun = false;
-        }
-        else
-        {
-            //creates a new bullet at the right gun
-            bullet = Instantiate(defaultBulletPrefab, movementController.RightGun, player.transform.rotation);
-
-            //next shot will be from the left gun
-            leftGun = true;
-        }
+        //creates a new bullet
+        SpriteRenderer bullet = Instantiate(defaultBulletPrefab, origin, rotation);
 
         //give bullet values/assets
         bullet.GetComponent<DefaultBulletInfo>().DeathParticles = defaultBulletDeathP;
@@ -380,5 +359,10 @@ public class SpawnManager : Singleton<SpawnManager>
 
         //bullet is collidable
         collisionManager.EnemyBullets.Add(bullet.GetComponent<EnemyBulletInfo>());
+    }
+
+    public void SpawnParticleEffect(ParticleSystem particleSystem, Vector3 location)
+    {
+
     }
 }
