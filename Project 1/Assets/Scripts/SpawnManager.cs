@@ -104,25 +104,11 @@ public class SpawnManager : Singleton<SpawnManager>
     [SerializeField]
     GameObject player;
 
-    //keeps track if the player is shooting or not
-    private bool isShooting;
-
-    private float shootTimer;
-
-    public bool IsShooting
-    {
-        get { return isShooting; }
-        set { isShooting = value; }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         //spawn first wave at the start
         currentTime = waveTime;
-
-        //player able to shoot at the start
-        shootTimer = playerInfo.GunCooldown;
     }
 
     // Update is called once per frame
@@ -135,29 +121,6 @@ public class SpawnManager : Singleton<SpawnManager>
         {
             Spawn();
             currentTime = 0;
-        }
-
-        //if left-click is held down
-        if (isShooting)
-        {
-            //increment timer
-            shootTimer = shootTimer += Time.deltaTime;
-            
-            //when shot is off cooldown, fire
-            if (shootTimer >= playerInfo.GunCooldown)
-            {
-                //reset shoot timer
-                shootTimer = 0;
-
-                //fire a bullet
-                SpawnDefaultBullet();
-            }
-        }
-        // keep timer ticking so cooldown can happen when not pressing left click
-        else if (shootTimer < playerInfo.GunCooldown)
-        {
-            //increment timer
-            shootTimer = shootTimer += Time.deltaTime;
         }
     }
 
@@ -358,7 +321,7 @@ public class SpawnManager : Singleton<SpawnManager>
     }
 
     //spawn a default player bullet
-    private void SpawnDefaultBullet()
+    public void SpawnDefaultBullet()
     {
         SpriteRenderer bullet;
         if (leftGun)

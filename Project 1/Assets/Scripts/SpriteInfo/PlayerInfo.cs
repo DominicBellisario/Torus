@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
+    //for bullet spawning
+    [SerializeField]
+    SpawnManager spawnManager;
+
     //for circle collsions
     [SerializeField]
     float radius;
@@ -35,6 +39,11 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField]
     float gunCooldown;
+
+    //keeps track if the player is shooting or not
+    private bool isShooting;
+
+    private float shootTimer;
 
     //--------things---------
 
@@ -69,21 +78,26 @@ public class PlayerInfo : MonoBehaviour
         set { health = value; }
     }
 
-    public float GunCooldown
-    {
-        get { return gunCooldown; }
-    }
-
     //used by collision manager to toggle player collisions
     public bool IsInvulnerable
     {
         get { return isInvulnerable; }
     }
 
+    //toggled by input manager when left click is down or up
+    public bool IsShooting
+    {
+        get { return isShooting; }
+        set { isShooting = value; }
+    }
+
     void Start()
     {
         //player can be hit off rip
         invulnTimer = invulnTime;
+
+        //player able to shoot at the start
+        shootTimer = gunCooldown;
     }
 
     // Update is called once per frame
@@ -126,6 +140,19 @@ public class PlayerInfo : MonoBehaviour
         {
             isInvulnerable = false;
             renderer.color = Color.white;
+        }
+
+        //increment shoot timer wether they want to shoot or not (shot is always cooling down)
+        shootTimer = shootTimer += Time.deltaTime;
+
+        //if left click is held down while shot is off cooldown, try to shoot
+        if (isShooting && shootTimer >= gunCooldown)
+        {
+            //reset shoot timer
+            shootTimer = 0;
+
+            //fire a bullet
+            spawnManager.SpawnDefaultBullet();
         }
     }
 

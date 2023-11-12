@@ -14,7 +14,7 @@ public class InputController : MonoBehaviour
     [SerializeField]
     PlayerParticles playerParticles;
     [SerializeField]
-    SpawnManager spawnManager;
+    PlayerInfo playerInfo;
 
     private Vector2 directionBeforeZero = Vector2.zero;
 
@@ -36,11 +36,11 @@ public class InputController : MonoBehaviour
     {
         if (context.performed)
         {
-            spawnManager.IsShooting = true;
+            playerInfo.IsShooting = true;
         }
         else if (context.canceled)
         {
-            spawnManager.IsShooting = false;
+            playerInfo.IsShooting = false;
         }
     }
 
