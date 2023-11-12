@@ -2689,94 +2689,6 @@ PrefabInstance:
       propertyPath: spawnManager
       value: 
       objectReference: {fileID: 1739656178}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: c8e99930-fee4-4f48-a5bf-c40b0902d393
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: 43c72ce4-52e5-4e93-b97c-0a4873beb477
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: Player/Boost[/Keyboard/shift]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: Player/Zero Out[/Keyboard/space]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1799778240546875596}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1799778240546875596}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnBoost
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnZeroOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InputController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InputController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3833214668425763910, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: health
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: flashSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: invulnTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: gunCooldown
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5492098265133053935, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2829,29 +2741,9 @@ PrefabInstance:
       propertyPath: rightZ
       value: 
       objectReference: {fileID: 549971132}
-    - target: {fileID: 7938195394481050931, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: movementController
-      value: 
-      objectReference: {fileID: 1799778240546875588}
     - target: {fileID: 8008682063749214190, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: boostStrength
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008682063749214190, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: accTimeModifier
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008682063749214190, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: playerParticles
-      value: 
-      objectReference: {fileID: 1799778240546875597}
-    - target: {fileID: 8008682063749214190, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: accelerationPower
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008682063749214190, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      propertyPath: boostRechargeTime
-      value: 3
+      propertyPath: bounceAmount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8730560362269303678, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
       propertyPath: m_RootOrder
@@ -2900,10 +2792,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5492098265133053935, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1799778240546875601}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
 --- !u!114 &1799778240546875588 stripped
 MonoBehaviour:
@@ -2925,40 +2814,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8059c2c69a43848b72449d011e34ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1799778240546875596 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3128652874911079333, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-  m_PrefabInstance: {fileID: 1799778240546875583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492528857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cbfd39cb540e894188d2db126391834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1799778240546875597 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7938195394481050931, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
-  m_PrefabInstance: {fileID: 1799778240546875583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492528857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd29ab407fdc29147ae393cd992d39f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1799778240546875601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492528857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52aaace3977bb8641a7b8eb41f57fab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2532359361363881694

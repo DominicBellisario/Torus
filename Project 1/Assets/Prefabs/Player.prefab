@@ -101,9 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d043c1d3f36684d96583a3fece2f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerParticles: {fileID: 7938195394481050931}
   objectVelocity: {x: 0, y: 0, z: 0}
-  accelerationPower: 2
-  accTimeModifier: 10
+  accelerationPower: 100
+  boostRechargeTime: 3
+  boostStrength: 70
 --- !u!114 &3128652874911079333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,18 +160,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7938195394481050931}
-        m_TargetAssemblyTypeName: PlayerParticles, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 022b1893-96bd-4eaf-b9ae-f44188d7acad
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -190,10 +180,10 @@ MonoBehaviour:
     m_ActionName: Player/Fire[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 1
+      - m_Target: {fileID: 3128652874911079333}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: OnBoost
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -202,8 +192,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: a7cd3dc4-448a-41b4-a20b-0a376da88e1d
-    m_ActionName: Player/SpawnEnemies[/Keyboard/g]
+    m_ActionId: c8e99930-fee4-4f48-a5bf-c40b0902d393
+    m_ActionName: Player/Boost[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3128652874911079333}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: OnZeroOut
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 43c72ce4-52e5-4e93-b97c-0a4873beb477
+    m_ActionName: Player/Zero Out[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -221,10 +227,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd29ab407fdc29147ae393cd992d39f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementController: {fileID: 8008682063749214190}
   leftP: {fileID: 0}
   rightP: {fileID: 0}
   upP: {fileID: 0}
   downP: {fileID: 0}
+  leftB: {fileID: 0}
+  rightB: {fileID: 0}
+  upB: {fileID: 0}
+  downB: {fileID: 0}
+  leftZ: {fileID: 0}
+  rightZ: {fileID: 0}
+  upZ: {fileID: 0}
+  downZ: {fileID: 0}
 --- !u!114 &4492995227721486332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,4 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 8
   renderer: {fileID: 2593748213031561406}
-  invulnTime: 2
+  invulnTime: 1
+  flashSpeed: 0.05
+  gunCooldown: 0.2

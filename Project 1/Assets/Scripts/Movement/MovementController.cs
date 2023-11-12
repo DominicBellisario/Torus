@@ -56,6 +56,10 @@ public class MovementController : MonoBehaviour
     //toggles between accelerating based on arrow keys and accelterating to get velocity to 0
     private bool zeroOut = false;
 
+    //determines how much the player will bounce off a wall
+    [SerializeField]
+    int bounceAmount;
+
     public Vector3 LeftGun
     {
         get { return leftGun; }
@@ -121,7 +125,9 @@ public class MovementController : MonoBehaviour
         {
             TryZeroOut();
         }
-        
+
+        //if player is outside the bounds of the scene, push them back in
+        StayInBounds();
 
         //update position with the speed
         objectPosition.x += velocity.x * Time.deltaTime;
@@ -210,6 +216,41 @@ public class MovementController : MonoBehaviour
             velocity.y -= accelerationPower * Time.deltaTime;
         }
     }
+
+    //bounces the player back in bounds if nessisary
+    private void StayInBounds()
+    {
+        int leftWrap = -160;
+        int rightWrap = 505;
+        int topWrap = 310;
+        int bottomWrap = -110;
+
+        //left side
+        if (objectPosition.x < leftWrap)
+        {
+            objectPosition = new Vector3(leftWrap + 1, objectPosition.y, objectPosition.z);
+            velocity.x = -velocity.x / bounceAmount;
+        }
+        //right side
+        else if (objectPosition.x > rightWrap)
+        {
+            objectPosition = new Vector3(rightWrap -1, objectPosition.y, objectPosition.z);
+            velocity.x = -velocity.x / bounceAmount;
+        }
+        //bottom
+        else if (objectPosition.y > topWrap)
+        {
+            objectPosition = new Vector3(objectPosition.x, topWrap - 1, objectPosition.z);
+            velocity.y = -velocity.y / bounceAmount;
+        }
+        //top
+        else if (objectPosition.y < bottomWrap)
+        {
+            objectPosition = new Vector3(objectPosition.x, bottomWrap + 1, objectPosition.z);
+            velocity.y = -velocity.y / bounceAmount;
+        }
+    }
+
 
     private void UpdatePlayerAndGunRotation()
     {
