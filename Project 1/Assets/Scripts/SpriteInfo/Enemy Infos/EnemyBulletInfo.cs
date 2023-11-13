@@ -21,6 +21,8 @@ public class EnemyBulletInfo : EnemyInfo
         //update player health
         healthUpdate.UpdateHealth(-damageToPlayer);
 
+        spawnManager.SpawnParticleEffect(deathParticles, transform.position);
+
         Destroy(gameObject);
     }
 }

@@ -132,5 +132,6 @@ MonoBehaviour:
   damageToPlayer: 30
   pointsWhenDestroyed: 1
   health: 2
-  numberOfChildren: 2
   renderer: {fileID: 3428607983588626067}
+  deathParticles: {fileID: 0}
+  numberOfChildren: 2

@@ -125,7 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicsObject: {fileID: -3694514020652528631}
   maxForce: 150
-  slowDownMultiplyer: 0
 --- !u!114 &-2159422795502870909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +142,4 @@ MonoBehaviour:
   pointsWhenDestroyed: 3
   health: 7
   renderer: {fileID: 3428607983588626067}
+  deathParticles: {fileID: 0}

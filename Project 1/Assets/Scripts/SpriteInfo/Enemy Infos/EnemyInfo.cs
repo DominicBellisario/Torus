@@ -32,6 +32,10 @@ public abstract class EnemyInfo : MonoBehaviour
     [SerializeField]
     protected SpriteRenderer renderer;
 
+    //death particles
+    [SerializeField]
+    protected ParticleSystem deathParticles;
+
     //center of the circle
     protected Vector2 center = new Vector2();
 

@@ -2154,7 +2154,6 @@ MonoBehaviour:
   minSeekerEnemies: 0
   maxSeekerEnemies: 3
   defaultBulletPrefab: {fileID: 1890145046305201178, guid: 901ffdce93f53dc4493cbcce6fbb9091, type: 3}
-  defaultBulletDeathP: {fileID: 4994613103310427475, guid: e8a511099f2eb3e45b9948bfb213d5e9, type: 3}
   player: {fileID: 1492528857}
 --- !u!4 &1739656179
 Transform:

@@ -114,4 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   damageToPlayer: 10
+  pointsWhenDestroyed: 0
+  health: 0
   renderer: {fileID: 1890145046305201178}
+  deathParticles: {fileID: 4994613103310427475, guid: d65067dfeb87f0648b73b6f8341ec6c8, type: 3}

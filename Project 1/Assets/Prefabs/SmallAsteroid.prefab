@@ -133,3 +133,4 @@ MonoBehaviour:
   pointsWhenDestroyed: 1
   health: 1
   renderer: {fileID: 3428607983588626067}
+  deathParticles: {fileID: 0}
