@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum AllWeapons
+{
+    _default
+}
 public class PlayerInfo : MonoBehaviour
 {
     //for bullet spawning
@@ -40,18 +44,41 @@ public class PlayerInfo : MonoBehaviour
     private float flashTimer;
     private bool toggleColor = false;
 
-    [SerializeField]
-    float gunCooldown;
+    
+    //-----------weapon stuff--------------
+
+    //the gun in slot 1
+    private string gunInSlot1;
+
+    //the gun in slot 2
+    private string gunInSlot2;
 
     //keeps track if the player is shooting or not
     private bool isShooting;
 
+    //keeps track of time for shooting
     private float shootTimer;
 
     //toggles between left and right gun firing
     private bool leftGun;
 
-    //--------things---------
+    //toggles between slot 1 and 2
+    private bool slot1 = true;
+
+    //"default": weak, medium firerate, medium bullet speed, infinite ammo, goes in slot 1 when player has no guns
+    //default weapon shoot speed
+    [SerializeField]
+    float defaultCooldown;
+
+    //"shotgun" medium, close range, slow firing speed, ### ammo
+    [SerializeField]
+    float shotgunCooldown;
+
+    //number of times the shotgun can fire
+    [SerializeField]
+    int shotgunAmmo;
+
+    //--------properties---------
 
     //used for circle collisions
     public Vector2 Center
@@ -103,7 +130,7 @@ public class PlayerInfo : MonoBehaviour
         invulnTimer = invulnTime;
 
         //player able to shoot at the start
-        shootTimer = gunCooldown;
+        shootTimer = defaultCooldown;
     }
 
     // Update is called once per frame
@@ -152,7 +179,7 @@ public class PlayerInfo : MonoBehaviour
         shootTimer = shootTimer += Time.deltaTime;
 
         //if left click is held down while shot is off cooldown, try to shoot
-        if (isShooting && shootTimer >= gunCooldown)
+        if (isShooting && shootTimer >= defaultCooldown)
         {
             //reset shoot timer
             shootTimer = 0;
@@ -191,6 +218,12 @@ public class PlayerInfo : MonoBehaviour
         {
             renderer.color = Color.clear;
         }
+    }
+
+    //update the player's current slot with the weapon the player collided with 
+    public void UpdateLoadout(string weaponName)
+    {
+        
     }
 
     private void OnDrawGizmos()
