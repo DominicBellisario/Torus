@@ -96,6 +96,13 @@ public abstract class EnemyInfo : MonoBehaviour
         //update score
         scoreUpdate.UpdateScore(pointsWhenDestroyed);
 
+        //spawn death particles
+        if (deathParticles != null)
+        {
+            spawnManager.SpawnParticleEffect(deathParticles, transform.position);
+        }
+        
+
         Destroy(gameObject);
     }
 
