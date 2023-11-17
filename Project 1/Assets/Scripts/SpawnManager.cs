@@ -351,6 +351,9 @@ public class SpawnManager : Singleton<SpawnManager>
         //give the bullet a health reference
         bullet.GetComponent<EnemyBulletInfo>().HealthUpdate = healthUpdate;
 
+        //gives the bullet a spawn manager reference
+        bullet.GetComponent<EnemyBulletInfo>().SpawnManager = this;
+
         //bullet is collidable
         collisionManager.EnemyBullets.Add(bullet.GetComponent<EnemyBulletInfo>());
     }

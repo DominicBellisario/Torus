@@ -30,7 +30,7 @@ public abstract class EnemyInfo : MonoBehaviour
 
     //used to calculate center of circle
     [SerializeField]
-    protected SpriteRenderer renderer;
+    protected new SpriteRenderer renderer;
 
     //death particles
     [SerializeField]
