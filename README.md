@@ -30,14 +30,14 @@ While traveling through the depths of space, the Torus received a distress signa
 
 ## You Additions
 
-Custom sprites
-HUD effects that change depending on the player's health.  At low life, the screen pulses red, and at no lives the screen is a solid red.
-the Torus faces the mouse and can accelerate in the 8 carndinal directions.  You can fire in one direction and move in another.
-Three different enemies.  Asteroids drift across the screen, Shooters rotate and discharge energy out of its four corners, and seekers seek the player using steering forces.
-The player fires out of two cannons, and alternates from one to another with each shot fired.
-Each wave spawns a random amount of enemies. The enemies spawn in random points around the edge of the screen with random speeds and rotations.
-Particle effects representing thrusters turn on When the Torus accelerates.
-Hold left-click to fire a steady stream of bullets
+    -    Custom sprites
+    -    HUD effects that change depending on the player's health.  At low life, the screen pulses red, and at no lives the screen is a solid red.
+    -    The Torus faces the mouse and can accelerate in the 8 carndinal directions.  You can fire in one direction and move in another.
+    -    Three different enemies.  Asteroids drift across the screen, Shooters rotate and discharge energy out of its four corners, and seekers seek the player using steering forces.
+    -    The player fires out of two cannons, and alternates from one to another with each shot fired.
+    -    Each wave spawns a random amount of enemies. The enemies spawn in random points around the edge of the screen with random speeds and rotations.
+    -    Particle effects representing thrusters turn on When the Torus accelerates.
+    -    Hold left-click to fire a steady stream of bullets.
 
 ## Sources
 
