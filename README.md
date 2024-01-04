@@ -1,4 +1,4 @@
-# Project PROJECT_NAME
+# Torus
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -11,7 +11,7 @@
 
 -   Camera Orientation: top down
 -   Camera Movement: fixed position
--   Player Health: healthbar (represented in text)
+-   Player Health: healthbar
 -   End Condition: game ends when the player runs out of health
 -   Scoring: defeating enemies
 
@@ -31,23 +31,15 @@ While traveling through the depths of space, the Torus received a distress signa
 
 ## You Additions
 
-Custom sprites and particle effects
-HUD effects that change depending on the player's health.  At 1 life, the screen pulses red, and at 0 lives the screen is a solid red.
+Custom sprites
+HUD effects that change depending on the player's health.  At low life, the screen pulses red, and at no lives the screen is a solid red.
 the Torus faces the mouse and can accelerate in the 8 carndinal directions.  You can fire in one direction and move in another.
-Two different enemies.  The Circle drifts across the screen, and the Diamond spins around while shooting lasers out of its four corners.
+Three different enemies.  Asteroids drift across the screen, Shooters rotate and discharge energy out of its four corners, and seekers seek the player using steering forces.
 The player fires out of two cannons, and alternates from one to another with each shot fired.
-Each wave spawns a random amount of enemies. The enemies spawn in random points around the edge of the screen with random speeds and rotations. More Circles are spawned than Diamonds.
+Each wave spawns a random amount of enemies. The enemies spawn in random points around the edge of the screen with random speeds and rotations.
 Particle effects representing thrusters turn on When the Torus accelerates.
-Left-clicking fires one bullet.  Click faster to shoot faster.
+Hold left-click to fire a steady stream of bullets
 
 ## Sources
 
 Custom sprites
-
-## Known Issues
-
-None (I hope)
-
-### Requirements not completed
-
-None (I hope)
