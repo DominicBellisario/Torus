@@ -5,7 +5,6 @@
 ### Student Info
 
 -   Name: Dominic Bellisario
--   Section: 05
 
 ## Game Design
 
