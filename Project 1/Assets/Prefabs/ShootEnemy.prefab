@@ -122,6 +122,7 @@ MonoBehaviour:
   health: 4
   renderer: {fileID: 3428607983588626067}
   deathParticles: {fileID: 2227522978161972838, guid: 0355c33cd1e990b44baa2e93ec67a8db, type: 3}
+  healthChance: 8
   enemyBulletPrefab: {fileID: 1890145046305201178, guid: 50ec859c4903b694f84f512795f6e9bd, type: 3}
   reloadTime: 1
 --- !u!114 &-446718537319594539

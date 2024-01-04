@@ -39,6 +39,10 @@ public abstract class EnemyInfo : MonoBehaviour
     //center of the circle
     protected Vector2 center = new Vector2();
 
+    //chance for enemy to give player health when destroyed (1/# chance)
+    [SerializeField]
+    protected int healthChance;
+
     //--------things---------
     public Vector2 Center
     {
@@ -90,9 +94,13 @@ public abstract class EnemyInfo : MonoBehaviour
     //enemy dies when its health is depleted
     protected virtual void ZeroHealth()
     {
-        //update player health
-        healthUpdate.UpdateHealth(damageToPlayer);
-
+        //heal the player a bit if the chance is good
+        if (UnityEngine.Random.Range(0, healthChance) == 0)
+        {
+            //update player health
+            healthUpdate.UpdateHealth(damageToPlayer);
+        }
+        
         //update score
         scoreUpdate.UpdateScore(pointsWhenDestroyed);
 

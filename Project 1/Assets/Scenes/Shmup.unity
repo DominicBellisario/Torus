@@ -2648,6 +2648,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1739656178}
     - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
+      propertyPath: defaultCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492995227721486332, guid: fc95069ce9b268748ba082216121d1ec, type: 3}
       propertyPath: movementController
       value: 
       objectReference: {fileID: 1799778240546875588}

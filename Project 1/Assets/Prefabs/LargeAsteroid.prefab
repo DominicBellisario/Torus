@@ -134,4 +134,5 @@ MonoBehaviour:
   health: 3
   renderer: {fileID: 3428607983588626067}
   deathParticles: {fileID: 2227522978161972838, guid: 9230b9109aa2087469f4e6cc433c52d4, type: 3}
+  healthChance: 8
   numberOfChildren: 2
