@@ -48,7 +48,7 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //-----------COLLISION LOOPS--------------
+        //-----------COLLISION LOOPS-------------
 
         //loops through every enemy
         foreach (var enemy in enemies)
